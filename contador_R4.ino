@@ -8,17 +8,7 @@ volatile bool irqFlag = false;
 volatile bool ledState = false;    
 int contador = 0; 
 
-uint8_t apagar[8][12] = {
-       { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-       { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-       { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-       { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-       { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-       { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-       { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-       { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
-};
-   
+ 
 void setup() {
   Serial.begin(115200);
   matrix.begin();
@@ -36,10 +26,9 @@ void setup() {
 
 void loop(){
 
+   // Este código hace un contador de 000 a 999 segundos y para un tiempo preciso utiliza el RTC del Arduino UNO R4.
 
    if(irqFlag==true){
-    
-  //  contador = contador + 1;
         
     uint8_t frame[8][12] = {
        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -67,7 +56,8 @@ void loop(){
    
    }
   
-/*
+/*   // Descomente estas lineas si solo requiere un contador de 000 a 999 
+ 
      for(int i=0; i<=999; i++){           
 
      uint8_t frame[8][12] = {
@@ -85,7 +75,7 @@ void loop(){
      
      drawNumber(i,frame);
      matrix.renderBitmap(frame, 8, 12);
-     delay(500);
+     delay(1000);
 
   }
 */
