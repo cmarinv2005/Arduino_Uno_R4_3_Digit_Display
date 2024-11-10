@@ -130,7 +130,6 @@ int milsDigit = num / 100;
 int tensDigit = (num / 10) % 10; 
 int unitsDigit = num % 10; 
 
-
   if (milsDigit == 0){
     zero(1, frame);
   } else if (milsDigit == 1){
@@ -151,9 +150,7 @@ int unitsDigit = num % 10;
     eight(1, frame);
   }else if (milsDigit == 9){
     nine(1, frame);
-  }
-  
-  
+  } 
 
   if (tensDigit == 0){
     zero(5, frame);
@@ -175,9 +172,7 @@ int unitsDigit = num % 10;
     eight(5, frame);
   }else if (tensDigit == 9){
     nine(5, frame);
-  }
-  
-  
+  }   
 
   if (unitsDigit == 0){
     zero(9, frame);
@@ -200,16 +195,5 @@ int unitsDigit = num % 10;
   } else if (unitsDigit == 9){
     nine(9, frame);
   } 
-
-
-
-/*
-void *digitFunctions[10])(int, uint8_t[8][12]) = {zero, one, two, three, four, five, six, seven, eight, nine};
-	
-	digitFunctionsmilsDigit; 
-	digitFunctionstensDigit; 
-	digitFunctionsunitsDigit; 
-	
-*/
 	
 }
