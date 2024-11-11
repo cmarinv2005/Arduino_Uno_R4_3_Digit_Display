@@ -26,7 +26,7 @@ void setup() {
 
 void loop(){
 
-   // Este código hace un contador de 000 a 999 segundos y para un tiempo preciso utiliza el RTC del Arduino UNO R4.
+   // Este código hace un contador de 000 a 999 segundos y para obtener un tiempo preciso utiliza el RTC del Arduino UNO R4.
 
    if(irqFlag==true){
         
@@ -48,37 +48,13 @@ void loop(){
 
      contador = contador + 1;
 
-     if(contador>=999){
+     if(contador>999){
       contador=0;
      }
      
      irqFlag = false;
    
-   }
-  
-/*   // Descomente estas lineas si solo requiere un contador de 000 a 999 
- 
-     for(int i=0; i<=999; i++){           
-
-     uint8_t frame[8][12] = {
-       { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-       { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-       { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-       { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-       { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-       { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-       { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-       { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
-     }; 
-     
-     matrix.renderBitmap(frame, 8, 12);    
-     
-     drawNumber(i,frame);
-     matrix.renderBitmap(frame, 8, 12);
-     delay(1000);
-
-  }
-*/
+   }  
 
 }
 
